@@ -23,7 +23,11 @@ export class InterceptorService implements HttpInterceptor {
     } else if (this.router.url === '/login') {
       return next.handle(req);    
     } else {
-      this.router.navigate(['/login']);
+      this.router.navigate(['login']).catch(
+        err => {
+          console.warn(err);
+        }
+      );
     }
   }
 }

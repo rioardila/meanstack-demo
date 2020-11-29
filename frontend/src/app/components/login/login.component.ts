@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     .subscribe(
       (res: any) => {
         this.loginService.token = JSON.parse(JSON.stringify(res.token));
-        localStorage.setItem('token', this.loginService.token);
+        this.loginService.setToken(this.loginService.token);
         // Update username in navbar
         console.log(form.value.username);
         this.sharedService.updateUsername(username);
