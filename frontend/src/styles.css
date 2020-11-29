@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+i {
+  cursor: pointer;
+}
+
+.container > .row {
+  padding-top: 40px;
+}
+
+.first-input {
+  margin-top: 35px;
+}

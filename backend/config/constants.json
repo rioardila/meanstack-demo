@@ -1,0 +1,6 @@
+{
+  "SECRET_KEY": "THIS IS MY SECRET KEY",
+  "TOKEN_EXPIRATION_TIME": 3600,
+  "SALT_WORK_FACTOR": 10,
+  "DB_URI": "mongodb://localhost/rest-api-example"
+}

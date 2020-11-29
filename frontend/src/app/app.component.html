@@ -1,0 +1,14 @@
+<nav class="nav-wrapper light-blue darken-2">
+  <div class="container">
+    <a routerLink="/" class="brand-logo">
+      <img src="assets/img/logo.png" height="40px">Home
+    </a>
+    <ul class="right">
+      <li *ngIf="!username"><a routerLink="/" class="right">Sign Up</a></li>
+      <li *ngIf="!username"><a routerLink="/login" class="right">Log In</a></li>
+      <li *ngIf="username">Welcome <strong>{{ username }}</strong> !</li>
+      <li *ngIf="username"><a routerLink="/login" class="right">Log Out</a></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,50 @@
+<div class="container blue-grey-text text-darken-4">
+  <div class="row">
+    <div class="col s10 m10 l6 offset-s1 offset-m1 offset-l3">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Log In</span>
+          <form #loginForm="ngForm" (ngSubmit)="logIn(loginForm)">
+            <div class="row">
+              <div class="input-field col s10 offset-s1 first-input">
+                <input type="text" id="username" class="form-control" name="username" #username="ngModel"
+                  [(ngModel)]="loginService.login.username" required autofocus>
+                <label for="username">Username</label>
+                <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                    class="alert alert-danger red-text">
+                  <div *ngIf="username.errors.required">
+                    Username is required
+                  </div>
+                </div>
+              </div>
+              <div class="input-field col s10 offset-s1">
+                <input type="password" id="password" class="form-control" name="password" #password="ngModel"
+                  [(ngModel)]="loginService.login.password" required>
+                <label for="password">Password</label>
+                <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                    class="alert alert-danger red-text">
+                  <div *ngIf="password.errors.required">
+                    Password is required
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <div class="input-field center col s10 offset-s1">
+                  <button class="btn waves-effect" type="submit"
+                    [disabled]="loginForm.form.invalid && loginForm.form.touched">Log In
+                    <i class="material-icons right">send</i>
+                  </button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 center" style="margin-top:5px;">
+                  <a routerLink="/" class="blue-text">Forgot Password</a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
